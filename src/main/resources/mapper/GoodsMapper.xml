@@ -9,7 +9,7 @@
     <id column="goodsId" jdbcType="INTEGER" property="goodsid" />
     <result column="goodsName" jdbcType="NVARCHAR" property="goodsname" />
     <result column="detail" jdbcType="NVARCHAR" property="detail" />
-    <result column="image" jdbcType="LONGVARBINARY" property="image" />
+    <result column="image" jdbcType="NVARCHAR" property="image" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
@@ -27,7 +27,7 @@
     insert into goods (goodsId, goodsName, detail, 
       image)
     values (#{goodsid,jdbcType=INTEGER}, #{goodsname,jdbcType=NVARCHAR}, #{detail,jdbcType=NVARCHAR}, 
-      #{image,jdbcType=LONGVARBINARY})
+      #{image,jdbcType=NVARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="cn.com.syzg.model.Goods">
     <!--
@@ -37,7 +37,7 @@
     update goods
     set goodsName = #{goodsname,jdbcType=NVARCHAR},
       detail = #{detail,jdbcType=NVARCHAR},
-      image = #{image,jdbcType=LONGVARBINARY}
+      image = #{image,jdbcType=NVARCHAR}
     where goodsId = #{goodsid,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">

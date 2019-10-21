@@ -22,5 +22,5 @@ public interface EmplyMapper {
      */
     List<Emply> selectAll();
 
-    Emply findByEmplyNo(Integer emplyNo);
+    Emply findByEmplyNo(String emplyNo);
 }

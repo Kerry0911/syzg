@@ -11,11 +11,11 @@ import javax.annotation.Resource;
 @Service
 public class EmplyServiceImpl  implements EmplyService {
 
-    @Autowired
+    @Resource
     private EmplyMapper emplyMapper;
 
     @Override
-    public Emply findByEmpNo(Integer emplyNo) {
+    public Emply findByEmplyNo(String emplyNo) {
         return emplyMapper.findByEmplyNo(emplyNo);
     }
 }

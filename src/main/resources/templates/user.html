@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="jquery.mobile-1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css">
-		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="css/user.css"/>
-		<script src="jquery.mobile-1.4.5/js/jquery.js"></script>
-		<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
-		<script src="js/jquery-mobile-navbar.js"></script>
+		<link rel="stylesheet" th:href="@{/jquery.mobile-1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css}">
+		<link rel="stylesheet" th:href="@{/font-awesome-4.7.0/css/font-awesome.min.css}"/>
+		<link rel="stylesheet" th:href="@{/css/user.css}"/>
+		<script th:src="@{/jquery.mobile-1.4.5/js/jquery.js}"></script>
+		<script th:src="@{/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js}"></script>
+		<script th:src="@{/js/jquery-mobile-navbar.js}"></script>
 	</head>
 	<body>
 		<div data-role="page">
@@ -21,30 +21,23 @@
 			<form>
 				<tr>
 					<label>工号:</label>
-					<input type="text" readonly="readonly"/>
+					<input type="text" readonly="readonly" id="empNo"/>
 				</tr>
 				<tr>
 					<label>姓名:</label>
-					<input type="text" readonly="readonly"/>
+					<input type="text" readonly="readonly" id="empName"/>
 				</tr>
 				<tr>
 					<label>所属部门:</label>
-					<input type="text" readonly="readonly"/>
+					<input type="text" readonly="readonly" id="deptNo"/>
 				</tr>
 				<tr>
 					<label>电话号码:</label>
-					<input type="text" readonly="readonly"/>
+					<input type="text" readonly="readonly" id="mobile"/>
 				</tr>
-				<tr>
-					<label>邮箱:</label>
-					<input type="text" readonly="readonly"/>
-				</tr>
+
 				<tr>
 					<label>积分:</label>
-					<input type="text" readonly="readonly"/>
-				</tr>
-				<tr>
-					<label>家庭住址:</label>
 					<input type="text" readonly="readonly"/>
 				</tr>
 			</form>
@@ -59,11 +52,10 @@
 		</div>
 		<script type="text/javascript">
 			$(function(){
-			   function tiao(){
+			   function tiao() {
 				   $('#divtab').navbar('refresh');
-				   window.location.href="subsidy_list.html";
-			   }	
-	
+				   window.location.href = "subsidy_list.html";
+			   }
 			})
 		</script>
 	</body>

@@ -1,41 +1,185 @@
-2019-10-18 10:23:44.229  INFO 4012 --- [restartedMain] cn.com.syzg.SyzgApplication              : Starting SyzgApplication on MicroWin10-0918 with PID 4012 (E:\syzg\syzg\target\classes started by Administrator in E:\syzg\syzg)
-2019-10-18 10:23:44.256  INFO 4012 --- [restartedMain] cn.com.syzg.SyzgApplication              : No active profile set, falling back to default profiles: default
-2019-10-18 10:23:44.352  INFO 4012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-10-18 10:23:44.384  INFO 4012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-10-18 10:23:45.608  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-10-18 10:23:45.609  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-10-18 10:23:45.623  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
-2019-10-18 10:23:45.660  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2019-10-18 10:23:45.662  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-10-18 10:23:45.679  INFO 4012 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 repository interfaces.
-2019-10-18 10:23:45.880 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\syzg\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
-2019-10-18 10:23:45.880 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\syzg\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
-2019-10-18 10:23:45.881 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\syzg\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
-2019-10-18 10:23:45.881 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\syzg\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
-2019-10-18 10:23:45.882 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
-2019-10-18 10:23:45.882 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
-2019-10-18 10:23:45.883 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
-2019-10-18 10:23:45.883 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
-2019-10-18 10:23:45.883 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
-2019-10-18 10:23:45.883 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
-2019-10-18 10:23:45.883 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
-2019-10-18 10:23:45.884 DEBUG 4012 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
-2019-10-18 10:23:46.048  INFO 4012 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6fe7299c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-10-18 10:23:46.356  INFO 4012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-10-18 10:23:46.381  INFO 4012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-10-18 10:23:46.382  INFO 4012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
-2019-10-18 10:23:46.387  INFO 4012 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2019-10-18 10:23:46.387  INFO 4012 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2019-10-18 10:23:46.387  INFO 4012 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2019-10-18 10:23:46.390  INFO 4012 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2019-10-18 10:23:46.626  INFO 4012 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2019-10-18 10:23:46.629  INFO 4012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-10-18 10:23:46.630  INFO 4012 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2240 ms
-2019-10-18 10:23:46.875  INFO 4012 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-10-18 10:23:47.538 DEBUG 4012 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\syzg\syzg\target\classes\mapper\CartMapper.xml]'
-2019-10-18 10:23:47.546 DEBUG 4012 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\syzg\syzg\target\classes\mapper\EmplyMapper.xml]'
-2019-10-18 10:23:47.575 DEBUG 4012 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\syzg\syzg\target\classes\mapper\GoodsMapper.xml]'
-2019-10-18 10:23:47.902 DEBUG 4012 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\syzg\syzg\target\classes\mapper\OrderMapper.xml]'
-2019-10-18 10:23:51.372  INFO 4012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-10-18 10:23:51.471  INFO 4012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-10-18 10:23:51.474  INFO 4012 --- [restartedMain] cn.com.syzg.SyzgApplication              : Started SyzgApplication in 7.928 seconds (JVM running for 8.833)
+2019-10-21 08:47:32.371  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Starting SyzgStart on DESKTOP-RGEJDJK with PID 7396 (E:\idea-workspace\syzg\target\classes started by Administrator in E:\idea-workspace\syzg)
+2019-10-21 08:47:32.396  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : No active profile set, falling back to default profiles: default
+2019-10-21 08:47:32.509  INFO 7396 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-21 08:47:32.509  INFO 7396 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-21 08:47:34.004  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:47:34.005  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:47:34.034  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-10-21 08:47:34.054  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:47:34.056  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:47:34.070  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-10-21 08:47:34.259 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
+2019-10-21 08:47:34.260 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
+2019-10-21 08:47:34.260 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
+2019-10-21 08:47:34.260 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
+2019-10-21 08:47:34.261 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
+2019-10-21 08:47:34.262 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+2019-10-21 08:47:34.262 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
+2019-10-21 08:47:34.263 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
+2019-10-21 08:47:34.263 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
+2019-10-21 08:47:34.263 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+2019-10-21 08:47:34.263 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
+2019-10-21 08:47:34.263 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-21 08:47:34.604  INFO 7396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$42f18783] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-21 08:47:35.091  INFO 7396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 08:47:35.119  INFO 7396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 08:47:35.120  INFO 7396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 08:47:35.239  INFO 7396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/syz]    : Initializing Spring embedded WebApplicationContext
+2019-10-21 08:47:35.239  INFO 7396 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2728 ms
+2019-10-21 08:47:36.152 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\CartMapper.xml]'
+2019-10-21 08:47:36.164 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\EmplyMapper.xml]'
+2019-10-21 08:47:36.180 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\GoodsMapper.xml]'
+2019-10-21 08:47:36.201 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\OrderMapper.xml]'
+2019-10-21 08:47:36.650  INFO 7396 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:47:36.785  WARN 7396 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-10-21 08:47:37.317  INFO 7396 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 08:47:37.385  INFO 7396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/syz'
+2019-10-21 08:47:37.388  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Started SyzgStart in 5.738 seconds (JVM running for 8.572)
+2019-10-21 08:48:45.697  INFO 7396 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:48:47.121  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Starting SyzgStart on DESKTOP-RGEJDJK with PID 7396 (E:\idea-workspace\syzg\target\classes started by Administrator in E:\idea-workspace\syzg)
+2019-10-21 08:48:47.122  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : No active profile set, falling back to default profiles: default
+2019-10-21 08:48:48.055  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:48:48.055  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:48:48.058  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-10-21 08:48:48.063  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:48:48.064  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:48:48.066  INFO 7396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-10-21 08:48:48.164 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
+2019-10-21 08:48:48.164 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
+2019-10-21 08:48:48.164 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
+2019-10-21 08:48:48.165 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
+2019-10-21 08:48:48.165 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
+2019-10-21 08:48:48.165 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+2019-10-21 08:48:48.165 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
+2019-10-21 08:48:48.166 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
+2019-10-21 08:48:48.166 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
+2019-10-21 08:48:48.168 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+2019-10-21 08:48:48.168 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
+2019-10-21 08:48:48.169 DEBUG 7396 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-21 08:48:48.253  INFO 7396 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$42f18783] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-21 08:48:48.520  INFO 7396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 08:48:48.522  INFO 7396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 08:48:48.523  INFO 7396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 08:48:48.575  INFO 7396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/syz]    : Initializing Spring embedded WebApplicationContext
+2019-10-21 08:48:48.575  INFO 7396 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1449 ms
+2019-10-21 08:48:49.044 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\CartMapper.xml]'
+2019-10-21 08:48:49.057 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\EmplyMapper.xml]'
+2019-10-21 08:48:49.078 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\GoodsMapper.xml]'
+2019-10-21 08:48:49.122 DEBUG 7396 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\OrderMapper.xml]'
+2019-10-21 08:48:49.284  INFO 7396 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:48:49.396  WARN 7396 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-10-21 08:48:49.853  INFO 7396 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 08:48:49.912  INFO 7396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/syz'
+2019-10-21 08:48:49.913  INFO 7396 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Started SyzgStart in 2.843 seconds (JVM running for 81.097)
+2019-10-21 08:48:49.918  INFO 7396 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-10-21 08:49:18.203  INFO 7164 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Starting SyzgStart on DESKTOP-RGEJDJK with PID 7164 (E:\idea-workspace\syzg\target\classes started by Administrator in E:\idea-workspace\syzg)
+2019-10-21 08:49:18.220  INFO 7164 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : No active profile set, falling back to default profiles: default
+2019-10-21 08:49:18.307  INFO 7164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-21 08:49:18.308  INFO 7164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-21 08:49:19.940  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:49:19.941  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:49:19.963  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2019-10-21 08:49:19.978  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:49:19.980  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:49:19.991  INFO 7164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 repository interfaces.
+2019-10-21 08:49:20.191 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
+2019-10-21 08:49:20.192 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
+2019-10-21 08:49:20.193 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
+2019-10-21 08:49:20.193 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
+2019-10-21 08:49:20.194 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
+2019-10-21 08:49:20.195 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
+2019-10-21 08:49:20.196 DEBUG 7164 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-21 08:49:20.526  INFO 7164 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3c5a747] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-21 08:49:21.035  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 08:49:21.075  INFO 7164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 08:49:21.075  INFO 7164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 08:49:21.252  INFO 7164 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/syz]    : Initializing Spring embedded WebApplicationContext
+2019-10-21 08:49:21.252  INFO 7164 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2944 ms
+2019-10-21 08:49:21.748 DEBUG 7164 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\CartMapper.xml]'
+2019-10-21 08:49:21.759 DEBUG 7164 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\EmplyMapper.xml]'
+2019-10-21 08:49:21.771 DEBUG 7164 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\GoodsMapper.xml]'
+2019-10-21 08:49:21.779 DEBUG 7164 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\OrderMapper.xml]'
+2019-10-21 08:49:22.002  INFO 7164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:49:22.136  WARN 7164 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-10-21 08:49:22.586  INFO 7164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 08:49:22.662  INFO 7164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/syz'
+2019-10-21 08:49:22.665  INFO 7164 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Started SyzgStart in 4.985 seconds (JVM running for 6.334)
+2019-10-21 08:49:46.490  INFO 9968 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Starting SyzgStart on DESKTOP-RGEJDJK with PID 9968 (E:\idea-workspace\syzg\target\classes started by Administrator in E:\idea-workspace\syzg)
+2019-10-21 08:49:46.494  INFO 9968 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : No active profile set, falling back to default profiles: default
+2019-10-21 08:49:46.577  INFO 9968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-21 08:49:46.577  INFO 9968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-21 08:49:47.775  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:49:47.776  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:49:47.799  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2019-10-21 08:49:47.813  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:49:47.815  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:49:47.825  INFO 9968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 repository interfaces.
+2019-10-21 08:49:48.204 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
+2019-10-21 08:49:48.205 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
+2019-10-21 08:49:48.207 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
+2019-10-21 08:49:48.209 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
+2019-10-21 08:49:48.210 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
+2019-10-21 08:49:48.211 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+2019-10-21 08:49:48.212 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
+2019-10-21 08:49:48.213 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
+2019-10-21 08:49:48.213 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
+2019-10-21 08:49:48.214 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+2019-10-21 08:49:48.215 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
+2019-10-21 08:49:48.216 DEBUG 9968 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-21 08:49:48.895  INFO 9968 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a334e99c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-21 08:49:49.349  INFO 9968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 08:49:49.376  INFO 9968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 08:49:49.376  INFO 9968 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 08:49:49.509  INFO 9968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/syz]    : Initializing Spring embedded WebApplicationContext
+2019-10-21 08:49:49.509  INFO 9968 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2932 ms
+2019-10-21 08:49:50.044 DEBUG 9968 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\CartMapper.xml]'
+2019-10-21 08:49:50.064 DEBUG 9968 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\EmplyMapper.xml]'
+2019-10-21 08:49:50.079 DEBUG 9968 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\GoodsMapper.xml]'
+2019-10-21 08:49:50.090 DEBUG 9968 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\OrderMapper.xml]'
+2019-10-21 08:49:50.383  INFO 9968 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:49:50.485  WARN 9968 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-10-21 08:49:50.902  INFO 9968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 08:49:50.968  INFO 9968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/syz'
+2019-10-21 08:49:50.972  INFO 9968 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Started SyzgStart in 5.01 seconds (JVM running for 7.051)
+2019-10-21 08:50:46.930  INFO 13660 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Starting SyzgStart on DESKTOP-RGEJDJK with PID 13660 (E:\idea-workspace\syzg\target\classes started by Administrator in E:\idea-workspace\syzg)
+2019-10-21 08:50:46.940  INFO 13660 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : No active profile set, falling back to default profiles: default
+2019-10-21 08:50:47.021  INFO 13660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-21 08:50:47.021  INFO 13660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-21 08:50:48.290  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:50:48.293  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:50:48.334  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 repository interfaces.
+2019-10-21 08:50:48.370  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-21 08:50:48.372  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-21 08:50:48.387  INFO 13660 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 repository interfaces.
+2019-10-21 08:50:48.555 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\CartMapper.class]
+2019-10-21 08:50:48.555 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\EmplyMapper.class]
+2019-10-21 08:50:48.555 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\GoodsMapper.class]
+2019-10-21 08:50:48.556 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Identified candidate component class: file [E:\idea-workspace\syzg\target\classes\cn\com\syzg\repository\OrderMapper.class]
+2019-10-21 08:50:48.557 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'cartMapper' and 'cn.com.syzg.repository.CartMapper' mapperInterface
+2019-10-21 08:50:48.558 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'cartMapper'.
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'emplyMapper' and 'cn.com.syzg.repository.EmplyMapper' mapperInterface
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'emplyMapper'.
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'goodsMapper' and 'cn.com.syzg.repository.GoodsMapper' mapperInterface
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'goodsMapper'.
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Creating MapperFactoryBean with name 'orderMapper' and 'cn.com.syzg.repository.OrderMapper' mapperInterface
+2019-10-21 08:50:48.559 DEBUG 13660 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2019-10-21 08:50:48.802  INFO 13660 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$85fa2370] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-21 08:50:49.257  INFO 13660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 08:50:49.279  INFO 13660 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 08:50:49.280  INFO 13660 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-10-21 08:50:49.382  INFO 13660 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/syz]    : Initializing Spring embedded WebApplicationContext
+2019-10-21 08:50:49.383  INFO 13660 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2362 ms
+2019-10-21 08:50:49.805 DEBUG 13660 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\CartMapper.xml]'
+2019-10-21 08:50:49.814 DEBUG 13660 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\EmplyMapper.xml]'
+2019-10-21 08:50:49.825 DEBUG 13660 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\GoodsMapper.xml]'
+2019-10-21 08:50:49.835 DEBUG 13660 --- [restartedMain] o.mybatis.spring.SqlSessionFactoryBean   : Parsed mapper file: 'file [E:\idea-workspace\syzg\target\classes\mapper\OrderMapper.xml]'
+2019-10-21 08:50:50.075  INFO 13660 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 08:50:50.211  WARN 13660 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-10-21 08:50:50.695  INFO 13660 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 08:50:50.758  INFO 13660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/syz'
+2019-10-21 08:50:50.762  INFO 13660 --- [restartedMain] cn.com.syzg.strat.SyzgStart              : Started SyzgStart in 4.632 seconds (JVM running for 7.547)

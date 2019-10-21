@@ -1,6 +1,8 @@
 package cn.com.syzg.repository;
 
 import cn.com.syzg.model.Emply;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 public interface EmplyMapper {
@@ -19,4 +21,6 @@ public interface EmplyMapper {
      * @mbg.generated
      */
     List<Emply> selectAll();
+
+    Emply findByEmplyNo(Integer emplyNo);
 }

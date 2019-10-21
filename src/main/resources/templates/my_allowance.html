@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -7,12 +7,12 @@
 <title>我的补贴</title>
 
 <!--公共集合样式-->
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="jquery.mobile-1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
-<script src="jquery.mobile-1.4.5/js/jquery.js"></script>
-<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+<link rel="stylesheet" th:href="@{/css/base.css}" />
+<link rel="stylesheet" th:href="@{/jquery.mobile-1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/font-awesome-4.7.0/css/font-awesome.min.css}"/>
+<script th:src="@{/jquery.mobile-1.4.5/js/jquery.js}"></script>
+<script th:src="@{/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js}"></script>
 
 
 </head>

@@ -19,7 +19,7 @@
 			</div>
 			<div style="height: 50px;"></div>
 			<div class="list">
-				<ul th:each="goods:${goodsAll}">
+				<ul th:each="goods,${goodsAll}">
 					<li>
 						<div class="box">
 							<div class="img">
@@ -30,7 +30,7 @@
 							<div class="info clearfix">
 							<div class="title" th:text="${goods.goodsname}"></div>
 							<div class="adddiv fl">
-								<span class="addshopping">+</span>
+								<span class="addshopping" th:onclick="addshoppingByCart([[${goods.goodsid}]],[[${session.emplyNoTwo}]])">+</span>
 							</div>
 							</div>
 						</div>
@@ -40,19 +40,45 @@
 			 <div data-role="navbar" id="divtab">
 				<ul>
 					<li><a href="javascript:void(0);" class="ui-btn-active ui-state-persist"><i class="fa fa-cart-plus"></i><br/>补贴列表</a></li>
-					<li><a href="javascript:void(0);" th:onclick="myAll([[${emplyNoTwo}]])"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
-					<li><a href="javascript:void(0);" th:onclick="user([[${emplyNoTwo}]])"><i class="fa fa-user"></i><br/>个人中心</a></li>
+					<li><a href="javascript:void(0);" th:onclick="myAll([[${session.emplyNoTwo}]])"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
+					<li><a href="javascript:void(0);" th:onclick="user([[${session.emplyNoTwo}]])"><i class="fa fa-user"></i><br/>个人中心</a></li>
 				</ul>
 			</div>
 		</div>
 		<script type="text/javascript">
+			var i=0;
+			function addshoppingByCart(goodsId,emplyNo) {
+				if(i==0){
+					i=1;
+					setTimeout(function () {
+				    i=0;
+					$.ajax({
+							cache:flase,
+							url:'http://localhost:8080/syzg/emp/addshoppingByCart?goodsId='+goodsId+'&emplyNo='+emplyNo,
+							type:'POST',
+							error:function () {
+								console.log("系统出现异常，请联系管理员!");
+							},
+							success:function (str) {
+								if(str=="cart001"){
+									console.log("恭喜您添加第一个商品到购物车!祝您使用愉快!");
+								}else if(str=="cart003"||str=="cart004"){
+									console.log("添加商品失败!");
+								}
+							}
+						})
+					},2000)
+				}else{
+					alert('请勿频繁操作！');
+				}
+
+
+			}
 			function user(emplyNo) {
-				alert(emplyNo);
 				window.location.href="http://localhost:8080/syzg/emp/userHtml?emplyNo="+emplyNo;
 			}
 
 			function myAll(emplyNo) {
-				alert(emplyNo);
 				window.location.href="http://localhost:8080/syzg/emp/my_allowanceHtml?emplyNo="+emplyNo;
 			}
 		</script>

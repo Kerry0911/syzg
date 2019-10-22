@@ -43,4 +43,8 @@ public interface CartMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(Cart record);
+
+    Cart selectByEmplyNo(String emplyNo);
+
+    boolean updateGoodsList(Cart cart);
 }

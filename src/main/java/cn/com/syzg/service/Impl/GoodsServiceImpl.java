@@ -17,4 +17,9 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Goods> findAll() {
         return goodsMapper.selectAll();
     }
+
+    @Override
+    public Goods fingbyGoodsId(Integer goodsId) {
+        return goodsMapper.selectByPrimaryKey(goodsId);
+    }
 }

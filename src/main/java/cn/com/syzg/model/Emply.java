@@ -1,6 +1,7 @@
 package cn.com.syzg.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Emply implements Serializable {
@@ -236,7 +237,37 @@ public class Emply implements Serializable {
         this.deptno = deptno == null ? null : deptno.trim();
     }
 
-    public Emply(String emplyno, String emplyname, String jobno, Date birth, String mobile, Integer level, String deptno) {
+    private BigDecimal subsidyMoney;
+
+    private Date subsidyTerm;
+
+    private BigDecimal ausedMoney;
+
+    public BigDecimal getSubsidyMoney() {
+        return subsidyMoney;
+    }
+
+    public void setSubsidyMoney(BigDecimal subsidyMoney) {
+        this.subsidyMoney = subsidyMoney;
+    }
+
+    public Date getSubsidyTerm() {
+        return subsidyTerm;
+    }
+
+    public void setSubsidyTerm(Date subsidyTerm) {
+        this.subsidyTerm = subsidyTerm;
+    }
+
+    public BigDecimal getAusedMoney() {
+        return ausedMoney;
+    }
+
+    public void setAusedMoney(BigDecimal ausedMoney) {
+        this.ausedMoney = ausedMoney;
+    }
+
+    public Emply(String emplyno, String emplyname, String jobno, Date birth, String mobile, Integer level, String deptno, BigDecimal subsidyMoney, Date subsidyTerm, BigDecimal ausedMoney) {
         this.emplyno = emplyno;
         this.emplyname = emplyname;
         this.jobno = jobno;
@@ -244,15 +275,21 @@ public class Emply implements Serializable {
         this.mobile = mobile;
         this.level = level;
         this.deptno = deptno;
+        this.subsidyMoney = subsidyMoney;
+        this.subsidyTerm = subsidyTerm;
+        this.ausedMoney = ausedMoney;
     }
 
-    public Emply(String emplyname, String jobno, Date birth, String mobile, Integer level, String deptno) {
+    public Emply(String emplyname, String jobno, Date birth, String mobile, Integer level, String deptno, BigDecimal subsidyMoney, Date subsidyTerm, BigDecimal ausedMoney) {
         this.emplyname = emplyname;
         this.jobno = jobno;
         this.birth = birth;
         this.mobile = mobile;
         this.level = level;
         this.deptno = deptno;
+        this.subsidyMoney = subsidyMoney;
+        this.subsidyTerm = subsidyTerm;
+        this.ausedMoney = ausedMoney;
     }
 
     public Emply() {
@@ -268,8 +305,9 @@ public class Emply implements Serializable {
                 ", mobile='" + mobile + '\'' +
                 ", level=" + level +
                 ", deptno='" + deptno + '\'' +
+                ", subsidyMoney=" + subsidyMoney +
+                ", subsidyTerm=" + subsidyTerm +
+                ", ausedMoney=" + ausedMoney +
                 '}';
     }
-
-
 }

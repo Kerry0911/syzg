@@ -14,7 +14,7 @@
 	<body>
 		<div data-role="page">
 		  <div data-role="none" class="header">
-			<h1>基本信息</h1>
+			<h1><img th:src="@{/img/logo.PNG}" id="imgser"></h1>
 		  </div>
 			<span th:each="user:${byEmplyNo}">
 		  <div data-role="none" id="form" class="ui-content">
@@ -38,29 +38,38 @@
 				</tr>
 
 				<tr>
-					<label>积分:</label>
-					<input type="text" readonly="readonly"/>
+					<label>补助金额:</label>
+					<input type="text" readonly="readonly" id="subsidyMoney" th:value="${user.subsidyMoney}"/>
+				</tr>
+
+				<tr>
+					<label>补助期限:</label>
+					<input type="text" readonly="readonly" id="subsidyTerm" th:value="${#dates.format(user.subsidyTerm,'yyyy-MM-dd HH:mm:ss')}"/>
+				</tr>
+
+				<tr>
+					<label>已用金额:</label>
+					<input type="text" readonly="readonly" id="ausedMoney" th:value="${user.ausedMoney}"/>
 				</tr>
 
 			</form>
 		  </div>
          <div data-role="navbar" id="divtab">
 			 <ul>
+				 <li><a href="#" class="ui-btn-active ui-state-persist"><i class="fa fa-user"></i><br/>个人中心</a></li>
 				 <li><a href="javascript:void(0);" th:onclick="bylist([[${user.emplyno}]])"><i class="fa fa-cart-plus"></i><br/>补贴列表</a></li>
 				 <li><a href="javascript:void(0);" th:onclick="myAll([[${user.emplyno}]])"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
-				 <li><a href="#" class="ui-btn-active ui-state-persist"><i class="fa fa-user"></i><br/>个人中心</a></li>
+				 <li><a href="javascript:void(0);"><i class="fa fa-support"></i><br/>帮助</a></li>
 			 </ul>
 		 </div>
 			</span>
 		</div>
 		<script type="text/javascript">
 			function bylist(emplyNo) {
-				alert(emplyNo+"0.0")
 				window.location.href="http://localhost:8080/syzg/emp/subsidy_listHtml?emplyNo="+emplyNo;
 			}
 
 			function myAll(emplyNo) {
-				alert(emplyNo+"0.0")
 				window.location.href="http://localhost:8080/syzg/emp/my_allowanceHtml?emplyNo="+emplyNo;
 			}
 		</script>

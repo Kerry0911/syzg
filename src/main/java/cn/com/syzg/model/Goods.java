@@ -1,6 +1,7 @@
 package cn.com.syzg.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Goods implements Serializable {
@@ -137,17 +138,29 @@ public class Goods implements Serializable {
         this.image = image;
     }
 
-    public Goods(Integer goodsid, String goodsname, String detail, String image) {
+    private BigDecimal amountOfMoney;
+
+    public BigDecimal getAmountOfMoney() {
+        return amountOfMoney;
+    }
+
+    public void setAmountOfMoney(BigDecimal amountOfMoney) {
+        this.amountOfMoney = amountOfMoney;
+    }
+
+    public Goods(Integer goodsid, String goodsname, String detail, String image, BigDecimal amountOfMoney) {
         this.goodsid = goodsid;
         this.goodsname = goodsname;
         this.detail = detail;
         this.image = image;
+        this.amountOfMoney = amountOfMoney;
     }
 
-    public Goods(String goodsname, String detail, String image) {
+    public Goods(String goodsname, String detail, String image, BigDecimal amountOfMoney) {
         this.goodsname = goodsname;
         this.detail = detail;
         this.image = image;
+        this.amountOfMoney = amountOfMoney;
     }
 
     public Goods() {
@@ -159,7 +172,8 @@ public class Goods implements Serializable {
                 "goodsid=" + goodsid +
                 ", goodsname='" + goodsname + '\'' +
                 ", detail='" + detail + '\'' +
-                ", image=" + image +
+                ", image='" + image + '\'' +
+                ", amountOfMoney=" + amountOfMoney +
                 '}';
     }
 }

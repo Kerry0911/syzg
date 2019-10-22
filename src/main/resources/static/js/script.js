@@ -17,30 +17,7 @@ $(function(){
 			}
 		})
 	})
-	
-	$(".add").click(function(){
-		var num = parseInt($(this).siblings('.num').val());
-		var price = parseInt($(this).parents('.m-num').siblings('.price').find('span').data('price'));
-		var sum = parseInt(num+1);
-		$(this).siblings('.num').val(sum);
-		var all = parseInt(sum *price);
-		$(this).parents('.m-num').siblings('.price').find('span').text(all)
-		
-	})
-	$(".jian").click(function(){
-		var num = parseInt($(this).siblings('.num').val());
-		var price = parseInt($(this).parents('.m-num').siblings('.price').find('span').data('price'));
-		if(num >1){
-			var sum = parseInt(num-1);
-			$(this).siblings('.num').val(sum);
-			console.log(sum)
-			var all = parseInt(sum *price);
-			$(this).parents('.m-num').siblings('.price').find('span').text(all)
-		}else{
-			alert('购买件数不能小于1')
-		}
-	})
-	
+
 	//全选点击
 	$(".gap-check").click(function(){
 		if(falg){

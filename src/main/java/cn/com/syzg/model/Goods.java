@@ -166,6 +166,10 @@ public class Goods implements Serializable {
     public Goods() {
     }
 
+    public Goods(Integer goodsid) {
+        this.goodsid = goodsid;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +

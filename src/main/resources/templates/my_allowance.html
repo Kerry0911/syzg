@@ -25,22 +25,23 @@
 		<div class="del" id="del">删除</div>
 	</div>
 	<div style="height: 50px;"></div>
-	<div class="list">
-		<ul th:each="goodslist,start:${goodsList}">
+	<div class="list article_type" th:fragment="article_type">
+		<ul th:each="bm:${byEmplyNo}">
 			<li>
 				<div class="box">
 					<div class="check dark-check"></div>
+					<span th:text="${bm.id}" style="display: none" class="bh"></span>
 					<div class="img">
-						<img th:src="@{${goodslist.image}}" style="width:70%;margin-top: 10px;" />
+						<img th:src="@{${bm.goods.image}}" style="width:70%;margin-top: 10px;" />
 					</div>
 					<div class="info clearfix" >
-						<div class="title" th:text="${goodslist.goodsname}"></div>
-						<div class="m-num fl">
-							<span class="jian" th:onclick="remove([[${start.count}]])">-</span>
-							<span style="margin-left: 50px;background-color: white" th:each="map:${goodsMap}" th:if="${goodslist.goodsid} eq ${map.key}" th:text="${map.value}" class="num"/>
-							<span class="add"  th:onclick="add([[${start.count}]])">+</span>
+						<div class="title" th:text="${bm.goods.goodsname}"></div>
+						<div class="m-num fl ">
+							<span class="jian"  th:onclick="removeGoodsId([[${bm.goods.goodsid}]],[[${session.emplyNoThree}]],[[${bm.count}]])">-</span>
+							<span style="margin-left: 50px;background-color: white" th:text="${bm.count}" class="num"/>
+							<span class="add"  th:onclick="add([[${bm.goods.goodsid}]],[[${session.emplyNoThree}]])">+</span>
 						</div>
-						<div class="price fr" >￥<span th:each="map2:${goodsMap}" th:if="${goodslist.goodsid} eq ${map2.key}" th:text="${goodslist.amountOfMoney}*${map2.value}"></span></div>
+						<div class="price fr" >￥<span th:text="${bm.goods.amountOfMoney}*${bm.count}"></span></div>
 					</div>
 				</div>
 			</li>
@@ -81,33 +82,38 @@
 		window.location.href="http://localhost:8080/syzg/emp/subsidy_listHtml?emplyNo="+emplyNo;
 	}
 
-	$(".jian").click(function(){
-		var num = parseInt($(this).siblings('.num').val());
-		var price = parseInt($(this).parents('.m-num').siblings('.price').find('span').data('price'));
+	function removeGoodsId(id,emplyNo,num){
 		if(num >1){
-			var sum = parseInt(num-1);
-			$(this).siblings('.num').val(sum);
-			console.log(sum)
-			var all = parseInt(sum *price);
-			$(this).parents('.m-num').siblings('.price').find('span').text(all)
+			$.ajax({
+				cache:false,
+				url:'http://localhost:8080/syzg/emp/RemoveGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
+				type:'POST',
+				error:function () {
+					console.log("系统发生异常,请联系管理员");
+				},
+				success:function (str) {
+					$(".article_type").html(str);
+				}
+			})
 		}else{
-			alert('购买件数不能小于1')
+            console.log("购买数量不能少于1!");
 		}
-	})
+	}
 
 
-	$(".add").click(function(){
-		alert("123")
-		var num = parseInt($(this).siblings('.num').val());
-		alert(num)
-		var price = parseInt($(this).parents('.m-num').siblings('.price').find('span').data('price'));
-		alert(price)
-		var sum = parseInt(num+1);
-		$(this).siblings('.num').val(sum);
-		var all = parseInt(sum *price);
-		$(this).parents('.m-num').siblings('.price').find('span').text(all)
-
-	})
+	function add(id,emplyNo){
+		$.ajax({
+			cache:false,
+			url:'http://localhost:8080/syzg/emp/addGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
+			type:'POST',
+			error:function () {
+				console.log("系统发生异常,请联系管理员");
+			},
+			success:function (str) {
+				$(".article_type").html(str);
+			}
+		})
+	}
 
 </script>
 

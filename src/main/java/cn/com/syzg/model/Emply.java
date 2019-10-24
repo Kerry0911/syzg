@@ -292,6 +292,11 @@ public class Emply implements Serializable {
         this.ausedMoney = ausedMoney;
     }
 
+    public Emply(String emplyno, BigDecimal ausedMoney) {
+        this.emplyno = emplyno;
+        this.ausedMoney = ausedMoney;
+    }
+
     public Emply() {
     }
 

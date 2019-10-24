@@ -1,6 +1,8 @@
 package cn.com.syzg.repository;
 
 import cn.com.syzg.model.Cart;
+import io.lettuce.core.dynamic.annotation.Param;
+
 import java.util.List;
 
 public interface CartMapper {
@@ -44,7 +46,11 @@ public interface CartMapper {
      */
     int updateByPrimaryKey(Cart record);
 
-    Cart selectByEmplyNo(String emplyNo);
+    List<Cart> selectByEmplyNo(String emplyNo);
 
     boolean updateGoodsList(Cart cart);
+
+    Cart selectCartbyEmplyNoAndGoodsId(@Param("emplyNo")String emplyNo,@Param("goodsId")Integer goodsId);
+
+    boolean deletebatchbyCart(List<String> list);
 }

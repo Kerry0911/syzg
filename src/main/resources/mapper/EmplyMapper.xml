@@ -39,6 +39,11 @@
   </select>
 
   <select id="findByEmplyNo" resultMap="BaseResultMap">
-     select * from emply where emplyNo=#{emplyNo,jdbcType=NVARCHAR}
+     select * from emply where emplyNo=#{emplyno,jdbcType=NVARCHAR}
   </select>
+
+  <update id="updateEmplyNo" parameterType="cn.com.syzg.model.Emply">
+    update emply set ausedMoney=#{ausedMoney,jdbcType=DECIMAL}
+    where emplyNo=#{emplyno,jdbcType=NVARCHAR}
+  </update>
 </mapper>

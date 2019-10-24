@@ -23,4 +23,6 @@ public interface EmplyMapper {
     List<Emply> selectAll();
 
     Emply findByEmplyNo(String emplyNo);
+
+    int updateEmplyNo(Emply emply);
 }

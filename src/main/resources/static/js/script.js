@@ -9,14 +9,80 @@ $(function(){
 			cart(1);
 		}
 	})
-	//删除
-	$("#del").click(function(){
-		$(".list ul li").each(function(item,ind){
-			if($(this).find('.dark-check').hasClass('action')){
-				$(this).remove();
+
+	/**
+	 * 删除购物车方法
+	 */
+	$("#del").click(function() {
+		var strlist = "";
+		var num="";
+		$(".list ul li").each(function (item, ind) {
+			if ($(this).find('.dark-check').hasClass('action')) {
+				 num = $(this).find('.bh').text();
+				if (num != "") {
+					strlist += num + ",";
+					removeCart(strlist)
+				}
 			}
 		})
 	})
+
+	/**
+	 * 下单订单交互方法
+	 * @param list
+	 */
+       function addOrder(list) {
+		   $.ajax({
+			   cache:false,
+			   url:'http://localhost:8080/syzg/emp/addOrder?strlist='+list,
+			   type:'POST',
+			   error:function(){
+				   alert("系统发生异常，请联系管理员!");
+			   },
+			   success:function (str) {
+				   if(str=="order001"){
+                        removeCart(list);
+				   }else if(str=="order002"){
+				   	    console.log("下单失败，请重新下单!");
+				   }
+			   }
+		   })
+	   }
+
+	/**
+	 * 删除购物车交互方法
+	 * @param list
+	 */
+	function removeCart(list){
+			$.ajax({
+				cache:false,
+				url:'http://localhost:8080/syzg/emp/removeCartById?strlist='+list,
+				type:'POST',
+				error:function(){
+					alert("系统发生异常，请联系管理员!");
+				},
+				success:function (str) {
+					$(".article_type").html(str);
+				}
+			})
+		}
+
+	/***
+	 * 下单方法
+	 */
+	$(".itme").click(function () {
+			var strlist = "";
+			var num="";
+			$(".list ul li").each(function (item, ind) {
+				if ($(this).find('.dark-check').hasClass('action')) {
+					num = $(this).find('.bh').text();
+					if (num != "") {
+						strlist += num + ",";
+						addOrder(strlist);
+					}
+				}
+			})
+		})
 
 	//全选点击
 	$(".gap-check").click(function(){
@@ -27,7 +93,6 @@ $(function(){
 		}
 		
 	})
-})
 //公用方法
 function cart(id){
 	//选择总长度
@@ -52,23 +117,6 @@ function cart(id){
 			$("#del").show();
 			$(".gap-check").removeClass('action');
 		}
-		//获取list中的价格
-		var list = [];
-		$(".list ul li").each(function(item,ind){
-			if($(this).find('.dark-check').hasClass('action')){
-				list.push($(this).find('.price span').text());
-			}
-		})
-		//总价
-		var arr = list.length;
-		var sum=0;
-		for(var i=0; i<arr; i++){
-			var num =parseInt(list[i]);//要先把价格变为int类型
-			sum =parseInt(num+sum);
-		}
-		if(sum==0){
-			sum= '0.00';
-		}
-		$(".all-price span").text(sum);
 	}
-}
+  }
+})

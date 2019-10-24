@@ -11,6 +11,7 @@ import cn.com.syzg.utils.GoodsListUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -154,14 +155,22 @@ public class EmplyController {
         if(b==true){
             Map<String, Emply> byBatchByIdOnMoney = cartService.findByBatchByIdOnMoney(list);
                 Emply emply =(Emply) byBatchByIdOnMoney.get("order");
-                System.out.println(emply.getEmplyno()+"**"+emply.getAusedMoney());
                 Emply byEmplyNo = emplyService.findByEmplyNo(emply.getEmplyno());
-                boolean bool = emplyService.editUserMoeny(new Emply(byEmplyNo.getEmplyno(),emply.getAusedMoney().add(byEmplyNo.getAusedMoney())));
-                if(bool==true){
-                    return "order001";
+            try {
+                if(byEmplyNo.getSubsidyMoney().compareTo(emply.getAusedMoney().add(byEmplyNo.getAusedMoney()))<=1){
+                    throw new RuntimeException();
                 }else{
-                    return "order002";
+                    boolean bool = emplyService.editUserMoeny(new Emply(byEmplyNo.getEmplyno(),emply.getAusedMoney().add(byEmplyNo.getAusedMoney())));
+                    if(bool==true){
+                        return "order001";
+                    }else{
+                        return "order002";
+                    }
                 }
+            } catch (Exception e) {
+                TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+                return "order004";
+            }
         }else{
             return "order002";
         }

@@ -6,6 +6,9 @@ import cn.com.syzg.model.Goods;
 import cn.com.syzg.repository.CartMapper;
 import cn.com.syzg.service.CartService;
 import cn.com.syzg.service.GoodsService;
+import org.springframework.cache.annotation.*;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +16,7 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.*;
 
+@CacheConfig(cacheNames ="cart",cacheManager = "cacheManager") //抽取公共的Manager
 @Service
 public class CartServiceImpl implements CartService {
     @Resource
@@ -32,15 +36,6 @@ public class CartServiceImpl implements CartService {
     public boolean editCart(Cart cart) {
         return cartMapper.updateGoodsList(cart);
     }
-
-//    public Map<String,Integer> GoodsByCartForEmplyNo(String [] strings){
-//            List<String> list = Arrays.asList(strings);
-//            Map<String,Integer> map=new HashMap<>();
-//            for (int j = 0; j <list.size(); j++) {
-//                map.put(list.get(j),map.get(list.get(j))==null?1:map.get(list.get(j))+1);
-//            }
-//            return map;
-//    }
 
     @Override
     public List<Cart> findByEmplyNo(String emplyNo) {
@@ -67,6 +62,7 @@ public class CartServiceImpl implements CartService {
         }
         return cartList;
     }
+
 
     @Override
     public Map<String, Emply> findByBatchByIdOnMoney(List<String> list) {

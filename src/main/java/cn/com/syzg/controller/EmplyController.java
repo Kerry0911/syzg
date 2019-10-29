@@ -111,6 +111,7 @@ public class EmplyController {
         return null;
     }
 
+    @ResponseBody
     @PostMapping("/addGoodslistById")
     public String addGoodslistById(@RequestParam(value = "goodsid",required = false)Integer goodsId,
                                    @RequestParam(value = "emplyNo",required = false)String emplyNo,
@@ -118,12 +119,9 @@ public class EmplyController {
         Cart cart = cartService.findByEmplyNoAndGoodsId(emplyNo,goodsId);
         boolean b = cartService.editCart(new Cart(cart.getId(),(cart.getCount() + 1)));
         if(b==true){
-                List<Cart> byEmplyNo = cartService.findByEmplyNo(emplyNo);
-                model.addAttribute("byEmplyNo",byEmplyNo);
-                session.setAttribute("emplyNoThree",emplyNo);
-            return "my_allowance::article_type";
+            return "addCart001";
         }else{
-            return "my_allowance::article_type";
+            return "addCart002";
         }
     }
 
@@ -157,7 +155,7 @@ public class EmplyController {
                 Emply emply =(Emply) byBatchByIdOnMoney.get("order");
                 Emply byEmplyNo = emplyService.findByEmplyNo(emply.getEmplyno());
             try {
-                if(byEmplyNo.getSubsidyMoney().compareTo(emply.getAusedMoney().add(byEmplyNo.getAusedMoney()))<=1){
+                if(byEmplyNo.getSubsidyMoney().compareTo(emply.getAusedMoney().add(byEmplyNo.getAusedMoney()))==-1){
                     throw new RuntimeException();
                 }else{
                     boolean bool = emplyService.editUserMoeny(new Emply(byEmplyNo.getEmplyno(),emply.getAusedMoney().add(byEmplyNo.getAusedMoney())));

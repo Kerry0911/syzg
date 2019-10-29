@@ -10,6 +10,7 @@
 <link th:href="@{/css/base.css}" rel="stylesheet"/>
 <link th:href="@{/jquery.mobile-1.4.5/css/themes/default/jquery.mobile-1.4.5.min.css}" rel="stylesheet">
 <link th:href="@{/css/style.css}" rel="stylesheet"/>
+<link th:href="@{/css/user.css}" rel="stylesheet" />
 <link th:href="@{/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet"/>
 <script th:src="@{/jquery.mobile-1.4.5/js/jquery.js}"></script>
 <script th:src="@{/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js}"></script>
@@ -19,13 +20,12 @@
 <body>
 
 <div class="m-box">
-	<div class="head">
-		<a href="#"></a>
-		<span id="wo">我的补贴</span>
-		<div class="del" id="del">删除</div>
+	<div data-role="none" class="header">
+		<h1><img th:src="@{/img/logo.PNG}" id="imgser"></h1>
+		<div class="del" id="del" style="color: red;display: inline-block;float: right;margin-right: 50px;display: none;font-size: 15px;">删除</div>
 	</div>
-	<div style="height: 50px;"></div>
-	<div class="list article_type" th:fragment="article_type">
+	<div style="height: 100px"></div>
+	<div class="list article_type"  th:fragment="article_type">
 		<ul th:each="bm:${byEmplyNo}">
 			<li>
 				<div class="box">
@@ -34,14 +34,16 @@
 					<div class="img">
 						<img th:src="@{${bm.goods.image}}" style="width:70%;margin-top: 10px;" />
 					</div>
-					<div class="info clearfix" >
+					<div class="info clearfix">
 						<div class="title" th:text="${bm.goods.goodsname}"></div>
 						<div class="m-num fl ">
-							<span class="jian"  th:onclick="removeGoodsId([[${bm.goods.goodsid}]],[[${session.emplyNoThree}]],[[${bm.count}]])">-</span>
+							<span class="jian">-</span>
 							<span style="margin-left: 50px;background-color: white" th:text="${bm.count}" class="num"/>
-							<span class="add"  th:onclick="add([[${bm.goods.goodsid}]],[[${session.emplyNoThree}]])">+</span>
+							<span id="goodsId" style="display: none" th:text="${bm.goods.goodsid}"></span>
+							<span id="emplyNoThree" style="display: none" th:text="${session.emplyNoThree}"></span>
+							<span class="add">+</span>
 						</div>
-						<div class="price fr" >￥<span th:text="${bm.goods.amountOfMoney}*${bm.count}"></span></div>
+						<div class="price fr">￥<span class="qian" th:text="${bm.goods.amountOfMoney}*${bm.count}"></span></div>
 					</div>
 				</div>
 			</li>
@@ -50,27 +52,29 @@
 
 	
 	
-	<div data-role="none">
-		<div class="foot clearfix">
-		<!--全选-->
-			<div class="all-check">
-				全选
-			<div class="gap-check check"></div>
-			</div>
-			  <!--总价-->
-			<div class="foot-box">
-						<div class="itme" style="margin-right:5px;float: right;margin-top: -5px;"><input type="button" class="btn" value="确认下单"  /></div>
-			</div>
-		</div>
-	</div>
+
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div data-role="none">
+            <div class="foot clearfix">
+                <!--全选-->
+                <div class="all-check">
+                    全选
+                    <div class="gap-check check"></div>
+                </div>
+                <!--总价-->
+                <div class="foot-box">
+                    <div class="itme" style="float: right;margin-right:-40px;"><input type="button" class="btn" value="确认下单"  /></div>
+                </div>
+            </div>
+        </div>
 	 <div data-role="navbar" id="divtab">
-				 <ul>
-					 <li style="margin-top: 5px;"><a href="javascript:void(0);" th:onclick="user([[${session.emplyNoThree}]])"><i class="fa fa-user"></i><br/>个人中心</a></li>
-					 <li><a href="javascript:void(0);" th:onclick="bylist([[${session.emplyNoThree}]])"><i class="fa fa-cart-plus"></i><br/>补贴列表</a></li>
-					 <li><a href="javascript:void(0);" class="ui-btn-active ui-state-persist"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
-					 <li><a href="javascript:void(0);"><i class="fa fa-support"></i><br/>帮助</a></li>
-				 </ul>
+         <ul>
+             <li><a href="javascript:void(0);" th:onclick="user([[${session.emplyNoThree}]])"><i class="fa fa-user"></i><br/>个人中心</a></li>
+             <li><a href="javascript:void(0);" th:onclick="bylist([[${session.emplyNoThree}]])"><i class="fa fa-cart-plus"></i><br/>补贴列表</a></li>
+             <li><a href="javascript:void(0);" class="ui-btn-active ui-state-persist"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
+         </ul>
 	</div>
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -80,39 +84,6 @@
 
 	function bylist(emplyNo) {
 		window.location.href="http://localhost:8080/syzg/emp/subsidy_listHtml?emplyNo="+emplyNo;
-	}
-
-	function removeGoodsId(id,emplyNo,num){
-		if(num >1){
-			$.ajax({
-				cache:false,
-				url:'http://localhost:8080/syzg/emp/RemoveGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
-				type:'POST',
-				error:function () {
-					console.log("系统发生异常,请联系管理员");
-				},
-				success:function (str) {
-					$(".article_type").html(str);
-				}
-			})
-		}else{
-            console.log("购买数量不能少于1!");
-		}
-	}
-
-
-	function add(id,emplyNo){
-		$.ajax({
-			cache:false,
-			url:'http://localhost:8080/syzg/emp/addGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
-			type:'POST',
-			error:function () {
-				console.log("系统发生异常,请联系管理员");
-			},
-			success:function (str) {
-				$(".article_type").html(str);
-			}
-		})
 	}
 
 </script>

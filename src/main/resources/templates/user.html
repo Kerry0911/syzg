@@ -54,14 +54,16 @@
 
 			</form>
 		  </div>
-         <div data-role="navbar" id="divtab">
-			 <ul>
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+              <div data-role="navbar" id="divtab" >
+			  <ul>
 				 <li><a href="#" class="ui-btn-active ui-state-persist"><i class="fa fa-user"></i><br/>个人中心</a></li>
 				 <li><a href="javascript:void(0);" th:onclick="bylist([[${user.emplyno}]])"><i class="fa fa-cart-plus"></i><br/>补贴列表</a></li>
 				 <li><a href="javascript:void(0);" th:onclick="myAll([[${user.emplyno}]])"><i class="fa fa-street-view"></i><br/>我的补贴</a></li>
-				 <li><a href="javascript:void(0);"><i class="fa fa-support"></i><br/>帮助</a></li>
-			 </ul>
-		 </div>
+			  </ul>
+		      </div>
+            </div>
+
 			</span>
 		</div>
 		<script type="text/javascript">

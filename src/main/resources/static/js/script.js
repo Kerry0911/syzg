@@ -1,35 +1,3 @@
-function removeGoodsId(id,emplyNo,num){
-    if(num >1){
-        $.ajax({
-            cache:false,
-            url:'http://localhost:8080/syzg/emp/RemoveGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
-            type:'POST',
-            error:function () {
-                console.log("系统发生异常,请联系管理员");
-            },
-            success:function (str) {
-                $(".article_type").html(str);
-            }
-        })
-    }else{
-        console.log("购买数量不能少于1!");
-    }
-}
-
-
-function add(id,emplyNo){
-    $.ajax({
-        cache:false,
-        url:'http://localhost:8080/syzg/emp/addGoodslistById?goodsid='+id+'&emplyNo='+emplyNo,
-        type:'POST',
-        error:function () {
-            console.log("系统发生异常,请联系管理员");
-        },
-        success:function (str) {
-            $(".article_type").html(str);
-        }
-    })
-}
 $(function () {
     //单选点击
     var falg = true;
@@ -50,6 +18,52 @@ $(function () {
             cart(2);
         }
 
+    })
+    $(".add").click(function(){
+        var num = parseInt($(this).siblings('.num').text());
+        var price = parseInt($(this).parents('.m-num').siblings('.price').find('.qian').text());
+        var sum = parseInt(num+1);
+        $(this).siblings('.num').text(sum);
+        var sumprice=price/num;
+        var all = parseInt(sum *sumprice);
+        $(this).parents('.m-num').siblings('.price').find('.qian').text(all);
+        var goodsId = parseInt($(this).siblings('#goodsId').text());
+        var emplyNoThree = parseInt($(this).siblings('#emplyNoThree').text());
+        $.ajax({
+            cache:false,
+            url:'http://localhost:8080/syzg/emp/addGoodslistById?goodsid='+goodsId+'&emplyNo='+emplyNoThree,
+            type:'POST',
+            error:function () {
+                console.log("系统发生异常,请联系管理员");
+            },
+            success:function (str) {
+            }
+        })
+    })
+    $(".jian").click(function(){
+        var num = parseInt($(this).siblings('.num').text());
+        var price = parseInt($(this).parents('.m-num').siblings('.price').find('.qian').text());
+        if(num >1){
+            var sum = parseInt(num-1);
+            $(this).siblings('.num').text(sum);
+            var sumprice=price/num;
+            var all = parseInt(sum *sumprice);
+            $(this).parents('.m-num').siblings('.price').find('.qian').text(all);
+            var goodsId = parseInt($(this).siblings('#goodsId').text());
+            var emplyNoThree = parseInt($(this).siblings('#emplyNoThree').text());
+            $.ajax({
+            cache:false,
+            url:'http://localhost:8080/syzg/emp/RemoveGoodslistById?goodsid='+goodsId+'&emplyNo='+emplyNoThree,
+            type:'POST',
+            error:function () {
+                console.log("系统发生异常,请联系管理员");
+            },
+            success:function (str) {
+            }
+        })
+        }else{
+            alert('购买件数不能小于1')
+        }
     })
 
 //公用方法
@@ -87,10 +101,10 @@ $(function () {
         var num = "";
         $(".list ul li").each(function (item, ind) {
             if ($(this).find('.dark-check').hasClass('action')) {
+                $(this).remove();
                 num = $(this).find('.bh').text();
                 if (num != "") {
                     strlist += num + ",";
-
                 }
             }
         })
@@ -112,6 +126,7 @@ $(function () {
             success: function (str) {
                 if (str == "order001") {
                     removeCart(list);
+                    alert("下单成功!");
                 } else if (str == "order002") {
                     alert("下单失败，请重新下单!");
                 } else if (str == "order004") {
@@ -134,7 +149,6 @@ $(function () {
                 alert("系统发生异常，请联系管理员!");
             },
             success: function (str) {
-                $(".article_type").html(str);
             }
         })
     }
@@ -147,6 +161,7 @@ $(function () {
         var num = "";
         $(".list ul li").each(function (item, ind) {
             if ($(this).find('.dark-check').hasClass('action')) {
+                $(this).remove();
                 num = $(this).find('.bh').text();
                 if (num != "") {
                     strlist += num + ",";

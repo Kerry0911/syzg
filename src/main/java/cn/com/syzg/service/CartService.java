@@ -10,7 +10,6 @@ import java.util.Map;
 public interface CartService {
     boolean addCart(Cart cart);
     boolean editCart(Cart cart);
-//    Map<String,Integer> GoodsByCartForEmplyNo(String [] strings);
     List<Cart> findByEmplyNo(String emplyNo);
     Cart findByEmplyNoAndGoodsId(String emplyNo,Integer goodsId);
     boolean removeCartByIdlist(List<String> list);
